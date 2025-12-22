@@ -1,0 +1,19 @@
+C:\workspace\Multiple-output-CHE-ML-model>python train_ridge_7.py
+Saved y1 -> models\ridge_y1.joblib | train_rmse=1.255667 train_r2=0.794068
+Saved y2 -> models\ridge_y2.joblib | train_rmse=0.250776 train_r2=0.849448
+Saved y3 -> models\ridge_y3.joblib | train_rmse=0.043474 train_r2=0.898067
+Saved y4 -> models\ridge_y4.joblib | train_rmse=0.003399 train_r2=0.633150
+Saved y5 -> models\ridge_y5.joblib | train_rmse=2.526073 train_r2=0.752504
+Saved y6 -> models\ridge_y6.joblib | train_rmse=0.057479 train_r2=0.993546
+Saved y7 -> models\ridge_y7.joblib | train_rmse=0.009366 train_r2=0.751126
+
+=== Ridge training complete (train-only) ===
+Report saved: reports\ridge_train_metrics.csv
+target  train_rmse  train_mae  train_r2             model_path
+    y1    1.255667   1.012414  0.794068 models\ridge_y1.joblib
+    y2    0.250776   0.202340  0.849448 models\ridge_y2.joblib
+    y3    0.043474   0.035470  0.898067 models\ridge_y3.joblib
+    y4    0.003399   0.002752  0.633150 models\ridge_y4.joblib
+    y5    2.526073   1.817510  0.752504 models\ridge_y5.joblib
+    y6    0.057479   0.043863  0.993546 models\ridge_y6.joblib
+    y7    0.009366   0.006961  0.751126 models\ridge_y7.joblib
