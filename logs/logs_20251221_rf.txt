@@ -1,0 +1,18 @@
+Saved y1 -> models\rf_y1.joblib | train_rmse=0.706778 train_r2=0.934756
+Saved y2 -> models\rf_y2.joblib | train_rmse=0.138348 train_r2=0.954179
+Saved y3 -> models\rf_y3.joblib | train_rmse=0.025642 train_r2=0.964538
+Saved y4 -> models\rf_y4.joblib | train_rmse=0.001659 train_r2=0.912586
+Saved y5 -> models\rf_y5.joblib | train_rmse=1.495779 train_r2=0.913222
+Saved y6 -> models\rf_y6.joblib | train_rmse=0.031246 train_r2=0.998093
+Saved y7 -> models\rf_y7.joblib | train_rmse=0.004345 train_r2=0.946449
+
+=== RandomForest training complete (train-only) ===
+Report saved: reports\rf_train_metrics.csv
+target  train_rmse  train_mae  train_r2          model_path
+    y1    0.706778   0.566125  0.934756 models\rf_y1.joblib
+    y2    0.138348   0.113378  0.954179 models\rf_y2.joblib
+    y3    0.025642   0.019392  0.964538 models\rf_y3.joblib
+    y4    0.001659   0.001319  0.912586 models\rf_y4.joblib
+    y5    1.495779   1.112877  0.913222 models\rf_y5.joblib
+    y6    0.031246   0.020556  0.998093 models\rf_y6.joblib
+    y7    0.004345   0.002945  0.946449 models\rf_y7.joblib

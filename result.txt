@@ -1,0 +1,14 @@
+
+=== Test Evaluation: Ridge vs RF ===
+Test file : data\test.csv (rows=20)
+Saved long: reports\eval_test_ridge_vs_rf_long.csv
+Saved wide: reports\eval_test_ridge_vs_rf_by_target.csv
+
+target  rf_rmse  ridge_rmse   rf_mae  ridge_mae    rf_r2  ridge_r2 winner_rmse winner_mae winner_r2  delta_rmse_rf_minus_ridge  delta_mae_rf_minus_ridge  delta_r2_rf_minus_ridge
+    y1 1.998187    2.177514 1.441836   1.695302 0.563554  0.481702          rf         rf        rf                  -0.179326                 -0.253467                 0.081852
+    y2 0.436083    0.549462 0.331101   0.429801 0.698199  0.520866          rf         rf        rf                  -0.113379                 -0.098700                 0.177333
+    y3 0.056617    0.069444 0.043757   0.055396 0.871135  0.806127          rf         rf        rf                  -0.012827                 -0.011639                 0.065008
+    y4 0.003829    0.004122 0.002867   0.003133 0.540299  0.467101          rf         rf        rf                  -0.000294                 -0.000266                 0.073198
+    y5 4.115233    4.869623 3.190025   3.310181 0.531250  0.343639          rf         rf        rf                  -0.754390                 -0.120156                 0.187612
+    y6 0.167787    0.103082 0.086996   0.074304 0.956619  0.983626       ridge      ridge     ridge                   0.064706                  0.012692                -0.027008
+    y7 0.007722    0.012232 0.005430   0.008605 0.670967  0.174272          rf         rf        rf                  -0.004511                 -0.003175                 0.496695
