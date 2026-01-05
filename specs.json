@@ -1,0 +1,10 @@
+{
+  "y1": { "type": "range", "lo": 81.674, "hi": 89.666, "hard": true },
+  "y2": { "type": "range", "lo": 94.298, "hi": 96.042, "hard": true },
+  "y3": { "type": "range", "lo": 2.547,  "hi": 2.773,  "hard": true },
+  "y4": { "type": "range", "lo": 0.61434,"hi": 0.62966,"hard": true },
+
+  "y5": { "type": "max",   "hi": 30.2,   "hard": false },
+
+  "y6": { "type": "range", "lo": 2.364,  "hi": 2.776,  "hard": true }
+}
