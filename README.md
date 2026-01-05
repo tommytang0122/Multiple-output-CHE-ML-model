@@ -14,7 +14,7 @@ The project is organized into a systematic workflow for data processing, model t
 ## 🚀 Workflow & Pipeline
 
 ### 1. Data Processing
-- **`cleandata.py`**: Merges paired features (AI+AJ and AK+AL) to create a standardized set of 37 features ($x_1$–$x_37$) and 7 targets ($y_1$–$y_7$).
+- **`cleandata.py`**: Merges paired features (AI+AJ and AK+AL) to create a standardized set of 37 features ($x_1$ – $x_37$) and 7 targets ($y_1$ – $y_7$).
 - **`make_train_test.py`**: Splits the cleaned data into an 80% training set and a 20% testing set.
 
 ### 2. Model Training
