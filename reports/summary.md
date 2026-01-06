@@ -104,3 +104,15 @@ Robust CSV loading and validation utilities:
 - `models/`: Trained model artifacts (.joblib files)
 - `reports/`: Evaluation metrics and inverse design solutions
 - `logs/`: Training logs (timestamped)
+
+
+Knowledge to Show Off During Your PresentationTo impress your audience, you can highlight these specific technical concepts:Multi-Output Regression vs. Single-Output: Explain that instead of one giant model, you built seven specialized models to account for the unique behavior of each chemical property. This ensures higher accuracy for each specific target.The Bias-Variance Tradeoff: Discuss why you compared Ridge Regression (high bias, low variance) with Random Forest (low bias, high variance). Mention that Ridge uses $L_2$ Regularization to handle multicollinearity in your 37 features, preventing the model from becoming too sensitive to noise.Ensemble Learning Mechanics: Briefly explain that your Random Forest uses 800 decision trees to "vote" on the final prediction, which captures complex non-linear interactions between chemical inputs that a simple linear model would miss.Inverse Design via Differential Evolution: This is a major "show-off" point. Explain that you aren't just predicting output; you are using an optimization algorithm (Differential Evolution) to work backward from a desired result to find the exact starting "recipe" ($x_1$-$x_{37}$).Data Integrity (Data Guard): Mention your use of a "Data Guard" utility to handle missing values and ensure type consistency. This demonstrates a professional "Production-Ready" mindset rather than just a basic academic approach.Presentation Tip (Traditional Chinese Translation)If presenting in a bilingual environment, use these terms to sound more professional:Parity Plot: 一致性對比圖Generalization: 泛化能力 (the model's ability to handle new data)Multicollinearity: 多重共線性Hold-out set: 留出集 (referring to your test file)
+
+
+在這個專案中，get_feature_importance 對於 隨機森林 (Random Forest) 和 脊迴歸 (Ridge Regression) 是基於完全不同的數學原理來運作的。以下是這兩種模型比較特徵重要性的核心原理說明：1. 隨機森林 (Random Forest) 的原理隨機森林的特徵重要性通常被稱為 「不純度減少平均值」 (Mean Decrease in Impurity, MDI)。核心概念：隨機森林是由數百棵決策樹組成的。在每一棵樹的每一個節點進行分裂（Split）時，演算法都會尋找一個特徵 ($x_i$) 和一個切分點，目的是讓分裂後的子節點的「不純度」降到最低。在迴歸問題中：所謂的「不純度」通常是指 MSE (均方誤差) 或 變異數 (Variance)。如果某個特徵 ($x_{37}$) 被用來分裂節點後，能大幅度降低該群資料的 MSE（讓預測變得更準確、更集中），那麼這個特徵就被認為很重要。計算方式：模型會計算每個特徵在所有 800 棵樹中，總共貢獻了多少「MSE 的減少量」。減少得越多，重要性分數就越高。優點：能捕捉到非線性關係和特徵間的交互作用。2. 脊迴歸 (Ridge Regression) 的原理脊迴歸的特徵重要性是基於 「迴歸係數的絕對值」 (Absolute Magnitude of Coefficients)。核心概念：脊迴歸是一個線性模型，其公式為：$$y = w_1 \cdot x_1 + w_2 \cdot x_2 + ... + b$$其中 $w$ 就是係數 (Weight/Coefficient)。標準化的關鍵作用：在您的 train_ridge_7.py 中，使用了 StandardScaler。這意味著所有的特徵 ($x_1$ 到 $x_{37}$) 都被縮放到相同的尺度（平均值為 0，標準差為 1）。原理：因為所有特徵的單位都統一了，係數 $w$ 的大小直接代表了該特徵對 $y$ 的敏感度。如果 $|w_1| = 5$，代表 $x_1$ 每變動 1 個標準差，$y$ 就會變動 5 個單位。如果 $|w_2| = 0.1$，代表 $x_2$ 對 $y$ 幾乎沒有影響。計算方式：直接取模型學到的係數 $w$ 的絕對值 ($|w|$) 來排序。絕對值越大，越重要。
+
+
+
+模型,重要性判斷依據,物理意義
+隨機森林,MSE 減少量 (貢獻度),該特徵在「區分數據」或「降低預測誤差」上的貢獻有多大？ (適合非線性)
+脊迴歸,係數絕對值 (權重),該特徵每變動一個單位，目標值會隨之變動多少？ (適合線性，前提是必須標準化)
